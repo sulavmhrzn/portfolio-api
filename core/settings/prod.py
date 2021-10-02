@@ -1,7 +1,8 @@
 from .base import *
 import dj_database_url
+import os
 
-DEBUG = False
+DEBUG = True
 ALLOWED_HOSTS = ["*"]
 
 DATABASES["default"] = dj_database_url.config(
@@ -10,7 +11,7 @@ DATABASES["default"] = dj_database_url.config(
 
 # Django Cloudinary Storage
 CLOUDINARY_STORAGE = {
-    "CLOUD_NAME": config("CLOUD_NAME"),
-    "API_KEY": config("API_KEY"),
-    "API_SECRET": config("API_SECRET"),
+    "CLOUD_NAME": os.environ.setdefault("CLOUD_NAME", config("CLOUD_NAME")),
+    "API_KEY": os.environ.setdefault("API_KEY", config("API_KEY")),
+    "API_SECRET": os.environ.setdefault("API_SECRET", config("API_SECRET")),
 }

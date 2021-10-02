@@ -10,5 +10,4 @@ class AdminOnlyBrowsableAPIMixin:
         rends = [JSONRenderer]
         if self.request.user and self.request.user.is_superuser:
             rends.append(BrowsableAPIRenderer)
-        print(rends)
         return [renderer() for renderer in rends]

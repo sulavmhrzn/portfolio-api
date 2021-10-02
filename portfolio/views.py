@@ -3,9 +3,10 @@ from rest_framework.response import Response
 
 from .serializers import AboutMeSerializer
 from .models import AboutMe
+from .mixins import AdminOnlyBrowsableAPIMixin
 
 
-class About(APIView):
+class About(AdminOnlyBrowsableAPIMixin, APIView):
     """Accepts only `GET` request."""
 
     def get(self, request):

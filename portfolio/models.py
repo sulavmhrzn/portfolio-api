@@ -80,12 +80,12 @@ class AboutMe(models.Model):
     summary = models.TextField()
     blog = models.URLField(blank=True, default="")
 
-    skill = models.ManyToManyField(Skill)
-    profile = models.ManyToManyField(Profile)
-    education = models.ManyToManyField(Education)
-    work = models.ManyToManyField(Work)
-    project = models.ManyToManyField(Project)
-    certificate = models.ManyToManyField(Certificate)
+    skill = models.ManyToManyField(Skill, blank=True)
+    profile = models.ManyToManyField(Profile, blank=True)
+    education = models.ManyToManyField(Education, blank=True)
+    work = models.ManyToManyField(Work, blank=True)
+    project = models.ManyToManyField(Project, blank=True)
+    certificate = models.ManyToManyField(Certificate, blank=True)
 
     def __str__(self):
         return self.name

@@ -16,6 +16,7 @@ MEDIA_URL = "/media/"
 DEFAULT_FILE_STORAGE = "cloudinary_storage.storage.MediaCloudinaryStorage"
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 WSGI_APPLICATION = "core.wsgi.application"
+DATABASES = {}
 
 INSTALLED_APPS = [
     "django.contrib.admin",

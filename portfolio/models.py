@@ -32,7 +32,7 @@ class Project(models.Model):
     repo_url = models.URLField(blank=True, default="")
     live_url = models.URLField(blank=True, default="")
     start_date = models.DateField(auto_now_add=False)
-    end_date = models.DateField(auto_now_add=False)
+    end_date = models.DateField(auto_now_add=False, blank=True, null=True)
 
     def __str__(self) -> str:
         return self.name
@@ -47,7 +47,7 @@ class Education(models.Model):
     )
     score = models.DecimalField(max_digits=4, decimal_places=2)
     start_date = models.DateField(auto_now_add=False)
-    end_date = models.DateField(auto_now_add=False)
+    end_date = models.DateField(auto_now_add=False, blank=True, null=True)
 
     def __str__(self) -> str:
         return self.institution
@@ -64,7 +64,7 @@ class Work(models.Model):
     name = models.CharField(max_length=200)
     position = models.CharField(max_length=200)
     start_date = models.DateField(auto_now_add=False)
-    end_date = models.DateField(auto_now_add=False)
+    end_date = models.DateField(auto_now_add=False, blank=True, null=True)
     summary = models.TextField()
 
     def __str__(self) -> str:

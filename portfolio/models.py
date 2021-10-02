@@ -82,7 +82,7 @@ class AboutMe(models.Model):
 
     skill = models.ManyToManyField(Skill)
     profile = models.ManyToManyField(Profile)
-    Education = models.ManyToManyField(Education)
+    education = models.ManyToManyField(Education)
     work = models.ManyToManyField(Work)
     project = models.ManyToManyField(Project)
     certificate = models.ManyToManyField(Certificate)

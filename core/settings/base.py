@@ -27,6 +27,8 @@ INSTALLED_APPS = [
     # Cloudinary Storage
     "cloudinary_storage",
     "cloudinary",
+    # Django Rest Framework
+    "rest_framework",
     "portfolio.apps.PortfolioConfig",
 ]
 

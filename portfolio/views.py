@@ -30,9 +30,8 @@ class ContactMeView(APIView):
     """
 
     def get(self, request):
-        contact = ContactMe.objects.all()
-        serializer = ContactMeSerializer(instance=contact, many=True)
-        return Response(serializer.data)
+        data = {"schema": [{"name": "str", "email": "str", "message": "str"}]}
+        return Response(data)
 
     def post(self, request):
         serializer = ContactMeSerializer(data=request.data)

@@ -1,5 +1,14 @@
 from rest_framework import serializers
-from .models import Project, Skill, Education, Certificate, Profile, AboutMe, Work
+from .models import (
+    Project,
+    Skill,
+    Education,
+    Certificate,
+    Profile,
+    AboutMe,
+    Work,
+    ContactMe,
+)
 
 
 class ProjectSerializer(serializers.ModelSerializer):
@@ -63,3 +72,9 @@ class AboutMeSerializer(serializers.ModelSerializer):
             "certificate",
             "profile",
         ]
+
+
+class ContactMeSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = ContactMe
+        exclude = ["id"]

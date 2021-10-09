@@ -92,3 +92,12 @@ class AboutMe(models.Model):
 
     class Meta:
         verbose_name_plural = "About me"
+
+
+class ContactMe(models.Model):
+    name = models.CharField(max_length=100)
+    email = models.EmailField()
+    message = models.TextField()
+
+    def __str__(self):
+        return self.name

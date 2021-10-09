@@ -1,5 +1,14 @@
 from django.contrib import admin
-from .models import Work, Skill, Profile, Education, AboutMe, Certificate, Project
+from .models import (
+    Work,
+    Skill,
+    Profile,
+    Education,
+    AboutMe,
+    Certificate,
+    Project,
+    ContactMe,
+)
 
 
 @admin.register(Work)
@@ -34,4 +43,9 @@ class CertificateAdmin(admin.ModelAdmin):
 
 @admin.register(Project)
 class ProjectAdmin(admin.ModelAdmin):
+    pass
+
+
+@admin.register(ContactMe)
+class ContactMeAdmin(admin.ModelAdmin):
     pass
